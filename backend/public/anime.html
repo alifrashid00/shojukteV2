@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog : Editor</title>
+    <title>Blog : Homepage</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/editor.css">
 
 </head>
 <body>
@@ -24,42 +24,35 @@
             <li class="link-item"><a href="/anime" class="link">Anime</a></li>
             <li class="link-item"><a href="/technology" class="link">Technology</a></li>
             <li class="link-item"><a href="/qna" class="link">QNA</a></li>
-            
         </ul>
     </nav>
 
-    <div class="banner">
-        <input type="file" accept="image/*" id="banner-upload" hidden>
-        <label for="banner-upload" class="banner-upload-btn"><img src="img/upload.png" alt="upload banner"></label>
-    </div>
-    
-    <div class="blog">
-        <input type="date" id="birthday" name="birthday">
+    <header class="header">
+        <div class="content">
+            <h1 class="heading">
+                <!-- <span class="small">welcome in the world of</span>
+                blog -->
+                <span class="no-fill">Events</span>
+            </h1>
+            <a href="/editor" class="btn">Start an Event</a>
+        </div>
+    </header>
 
-        <select name="category" id="category">
-            <option value="discussions">Discussions</option>
-            <option value="study">Study</option>
-            <option value="games">Games</option>
-            <option value="technology">Technology</option>
-            <option value="anime">Anime</option>
-            <option value="qna">QNA</option>
-        </select>
-        
-        <textarea type="text" class="title" placeholder="Event title..."></textarea>
-        <textarea type="text" class="article" placeholder="Start writing here..."></textarea>
-    </div>
-
-    <div class="blog-options">
-        <button class="btn dark publish-btn">publish</button>
-        <input type="file" accept="image/*" id="image-upload" hidden>
-        <label for="image-upload" class="btn grey upload-btn">Upload Image</label>
-    </div>
+    <!-- blog section -->
+    <section class="blogs-section">
+        <!-- <div class="blog-card">
+            <img src="img/header.jpg" class="blog-image" alt="">
+            <h1 class="blog-title">Lorem ipsum dolor sit amet consectetur.</h1>
+            <p class="blog-overview">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt incidunt fugiat quos porro repellat harum. Adipisci tempora corporis rem cum.</p>
+            <a href="/" class="btn dark">read</a>
+        </div> -->
+    </section>
 
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
 
     <script src="js/firebase.js"></script>
-    <script src="js/editor.js"></script>
-
+    <script src="js/category.js"></script>
+    
 </body>
 </html>
