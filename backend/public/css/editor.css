@@ -104,3 +104,32 @@ textarea::-webkit-scrollbar-thumb{
     font-size: 14px;
     display: none;
 }
+
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    background: #031525;
+    z-index: 9;
+    
+}
+
+.links-container{
+    display: flex;
+    list-style: none;
+}
+
+.link{
+    padding: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #dddddd;
+}

@@ -36,6 +36,24 @@ app.use('/api/users', userRoutes);
 app.get('/event', (req, res) => {
     res.sendFile(path.join(initial_path, 'home.html'));
 });
+app.get('/discussions', (req, res) => {
+    res.sendFile(path.join(initial_path, 'discussions.html'));
+});
+app.get('/anime', (req, res) => {
+    res.sendFile(path.join(initial_path, 'anime.html'));
+});
+app.get('/games', (req, res) => {
+    res.sendFile(path.join(initial_path, 'games.html'));
+});
+app.get('/technology', (req, res) => {
+    res.sendFile(path.join(initial_path, 'technology.html'));
+});
+app.get('/qna', (req, res) => {
+    res.sendFile(path.join(initial_path, 'qna.html'));
+});
+app.get('/study', (req, res) => {
+    res.sendFile(path.join(initial_path, 'study.html'));
+});
 
 app.get('/upcommingEvents', (req, res) => {
     res.sendFile(path.join(initial_path, 'upcommingEvents.html'));

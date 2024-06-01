@@ -70,6 +70,10 @@ publishBtn.addEventListener('click', () => {
         // let theComment = '';
 
         // Access Firestore with db variable;
+
+        const categorySelect = document.getElementById('category');
+        const selectedCategory = categorySelect.value;
+
         db.collection("blogs").doc(docName).set({
             title: blogTitleField.value,
             article: articleField.value,
@@ -78,7 +82,8 @@ publishBtn.addEventListener('click', () => {
             theDate: birthday.getDate(),
             theMonth: birthday.getMonth(),
             theYear: birthday.getFullYear(),
-            comment: []
+            comment: [],
+            category: selectedCategory
         })
         .then(() => {
             location.href = `/${docName}`;
