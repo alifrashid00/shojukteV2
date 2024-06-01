@@ -2,6 +2,36 @@ let blogId = decodeURI(location.pathname.split("/").pop());
 
 let docRef = db.collection("blogs").doc(blogId);
 
+
+// const commentInputt = document.querySelector('#commentt');
+
+// // Maximum number of characters per line (adjust based on your design)
+// const maxCharsPerLine = 50;
+
+// // Automatically add newline when text exceeds maxCharsPerLine
+// commentInputt.addEventListener('input', () => {
+//     let value = commentInputt.value;
+//     let lines = value.split('\n');
+//     let newValue = '';
+
+//     lines.forEach(line => {
+//         while (line.length > maxCharsPerLine) {
+//             newValue += line.substring(0, maxCharsPerLine) + '\n';
+//             line = line.substring(maxCharsPerLine);
+//         }
+//         newValue += line + '\n';
+//     });
+
+//     // Remove the last extra newline
+//     newValue = newValue.trimEnd();
+
+//     // Update the textarea only if the value has changed
+//     if (commentInputt.value !== newValue) {
+//         commentInputt.value = newValue;
+//     }
+// });
+
+
 docRef.get().then((doc) => {
     if(doc.exists){
         setupBlog(doc.data());
@@ -15,22 +45,30 @@ const setupBlog = (data) => {
     const blogTitle = document.querySelector('.title');
     const titleTag = document.querySelector('title');
     const publish = document.querySelector('.published');
+    const eventDate = document.querySelector('.eventDate');
     const commentSection = document.querySelector('.comment-section');
     
     banner.style.backgroundImage = `url(${data.bannerImage})`;
 
     titleTag.innerHTML += blogTitle.innerHTML = data.title;
     publish.innerHTML += data.publishedAt;
+    eventDate.innerHTML += data.theDate;
+    eventDate.innerHTML += ' ';
+    let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    eventDate.innerHTML += months[data.theMonth];
+    eventDate.innerHTML += ' ';
+    eventDate.innerHTML += data.theYear;
 
     const article = document.querySelector('.article');
     addArticle(article, data.article);
 
     if (data.comments) {
-        data.comments.forEach(comment => {
-            const p = document.createElement('p');
-            p.textContent = comment;
-            commentSection.appendChild(p);
-        });
+        commentSection.value = data.comments.map(comment => 'anonymous: ' + comment).join('\n\n') + '\n\n';
+        // data.comments.forEach(comment => {
+        //     const p = document.createElement('p');
+        //     p.textContent = 'anonymous: '+comment+'\n\n';
+        //     commentSection.appendChild(p);
+        // });
     }
     
 }
@@ -97,9 +135,10 @@ const commentBtn = document.querySelector('.publish-btn');
                     comments: comments
                 }).then(() => {
                     const commentSection = document.querySelector('.comment-section');
-                    const p = document.createElement('p');
-                    p.textContent = newComment;
-                    commentSection.appendChild(p);
+                    // const p = document.createElement('p');
+                    // p.textContent = 'anonymous: '+newComment+'\n\n';
+                    // commentSection.appendChild(p);
+                    commentSection.value += 'anonymous: ' + newComment + '\n\n';
                     commentInput.value = ''; // Clear the input field
                 }).catch((err) => {
                     console.error('Error updating document:', err);
