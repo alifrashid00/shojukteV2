@@ -8,8 +8,7 @@ import { app, server } from './socket/socket.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
-//shahi
-
+//shah
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fileupload from 'express-fileupload';
@@ -20,6 +19,7 @@ let initial_path = path.join(__dirname, 'public');
 
 app.use(express.static(initial_path));
 app.use(fileupload());
+
 //
 
 app.use(express.json());
@@ -32,7 +32,11 @@ app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/users', userRoutes);
 
+
+
+
 //shahi
+
 app.get('/event', (req, res) => {
     res.sendFile(path.join(initial_path, 'home.html'));
 });
