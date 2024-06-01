@@ -23,7 +23,7 @@ function Routine() {
 
             // Sort routine data by day
             data.sort((a, b) => {
-                const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+                const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri","Time"];
                 return daysOrder.indexOf(a.Day) - daysOrder.indexOf(b.Day);
             });
 

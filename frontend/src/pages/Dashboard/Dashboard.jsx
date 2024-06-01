@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowPathIcon, CloudArrowUpIcon,ChatBubbleLeftIcon,GlobeAltIcon,CalendarDaysIcon} from '@heroicons/react/24/outline'
-
+import LogoutButton from "../../components/sidebar/LogoutButton.jsx";
 const features = [
     {
         name: 'Filesharing',
@@ -70,6 +70,8 @@ export default function Example() {
                     </dl>
                 </div>
             </div>
+            <LogoutButton/>
+
         </div>
     )
 
