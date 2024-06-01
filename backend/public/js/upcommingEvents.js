@@ -28,7 +28,7 @@ db.collection("blogs").get().then((blogs) => {
 
 
 
-        if(usedDate > cur)
+        if(usedDate >= cur)
             {
                 if(blog.id != decodeURI(location.pathname.split("/").pop())){
                     createBlog(blog);
