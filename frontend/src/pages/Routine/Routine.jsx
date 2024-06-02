@@ -23,7 +23,7 @@ function Routine() {
 
             // Sort routine data by day
             data.sort((a, b) => {
-                const daysOrder = ["Mon", "Tue", "Wed", "Thu", "Fri","Time"];
+                const daysOrder = ["Time","Mon", "Tue", "Wed", "Thu", "Fri"];
                 return daysOrder.indexOf(a.Day) - daysOrder.indexOf(b.Day);
             });
 
@@ -88,7 +88,7 @@ function Routine() {
                 <div className="flex">
                     <input
                         type="text"
-                        placeholder="Day"
+                        placeholder="Day/Time"
                         value={day}
                         onChange={(e) => setDay(e.target.value)}
                         className="border border-gray-400 px-4 py-2 mr-2 w-1/4"
@@ -102,7 +102,7 @@ function Routine() {
                     />
                     <input
                         type="text"
-                        placeholder="New Subject"
+                        placeholder="New Subject/Time"
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
                         className="border border-gray-400 px-4 py-2 mr-2 w-1/4"

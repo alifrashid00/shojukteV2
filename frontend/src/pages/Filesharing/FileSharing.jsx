@@ -160,9 +160,9 @@ const FileSharing = () => {
                 <section className="upload-container">
                     <div className="drop-zone">
                         <div className="icon-container">
-                            <img src="./file.svg" className="center" alt="file icon" draggable="false"/>
-                            <img src="./file.svg" className="right" alt="file icon" draggable="false"/>
-                            <img src="./file.svg" className="left" alt="file icon" draggable="false"/>
+                            {/*<img src="./file.svg" className="center" alt="file icon" draggable="false"/>*/}
+                            {/*<img src="./file.svg" className="right" alt="file icon" draggable="false"/>*/}
+                            {/*<img src="./file.svg" className="left" alt="file icon" draggable="false"/>*/}
                         </div>
                         <input type="file" id="fileInput"/>
                         <div className="title">Drop your Files here or, <span class="browseBtn">browse</span>
