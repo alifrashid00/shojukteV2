@@ -63,7 +63,7 @@ const setupBlog = (data) => {
     addArticle(article, data.article);
 
     if (data.comments) {
-        commentSection.value = data.comments.map(comment => 'anonymous: ' + comment).join('\n\n') + '\n\n';
+        commentSection.value = data.comments.map(comment => '>>> ' + comment).join('\n\n') + '\n\n';
         // data.comments.forEach(comment => {
         //     const p = document.createElement('p');
         //     p.textContent = 'anonymous: '+comment+'\n\n';
@@ -138,7 +138,7 @@ const commentBtn = document.querySelector('.publish-btn');
                     // const p = document.createElement('p');
                     // p.textContent = 'anonymous: '+newComment+'\n\n';
                     // commentSection.appendChild(p);
-                    commentSection.value += 'anonymous: ' + newComment + '\n\n';
+                    commentSection.value += '>>> ' + newComment + '\n\n';
                     commentInput.value = ''; // Clear the input field
                 }).catch((err) => {
                     console.error('Error updating document:', err);
